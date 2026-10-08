@@ -1,4 +1,4 @@
-# oniscrape 🚀
+# oniscrape 
 
 [![PyPI version](https://img.shields.io/pypi/v/oniscrape.svg)](https://pypi.org/project/oniscrape/)
 [![Python versions](https://img.shields.io/pypi/pyversions/oniscrape.svg)](https://pypi.org/project/oniscrape/)
@@ -7,14 +7,14 @@
 
 > **Высокопроизводительный асинхронный скрапинг-движок для Python на базе `curl_cffi` (TLS/JA3/JA4 spoofing), `selectolax` (C/Lexbor), `orjson` (Rust) и `Pydantic v2`.**
 
-📂 **Исходный код и примеры:** [https://github.com/OniSku/oniscrape](https://github.com/OniSku/oniscrape)  
-📁 **Папка с готовыми скриптами:** [https://github.com/OniSku/oniscrape/tree/main/examples](https://github.com/OniSku/oniscrape/tree/main/examples)
+**Исходный код и примеры:** [https://github.com/OniSku/oniscrape](https://github.com/OniSku/oniscrape)  
+**Папка с готовыми скриптами:** [https://github.com/OniSku/oniscrape/tree/main/examples](https://github.com/OniSku/oniscrape/tree/main/examples)
 
 Специализированный фреймворк для сверхбыстрого сбора данных с современных веб-приложений (Next.js SSR, React Server Components, Threads/Instagram Relay Cache, Nuxt) и закрытых сайтов с авторизацией **без запуска тяжелых headless-браузеров**.
 
 ---
 
-## ⚡ Почему не Playwright / Selenium?
+## Почему не Playwright / Selenium?
 
 | Параметр | Headless Браузер (Playwright / Puppeteer) | `oniscrape` (State & API Engine) |
 | :--- | :--- | :--- |
@@ -27,7 +27,7 @@
 
 ---
 
-## 📦 Установка
+## Установка
 
 ```bash
 pip install oniscrape
@@ -45,7 +45,7 @@ pip install oniscrape[redis]
 
 ---
 
-## 🎯 Быстрый старт: `client.scrape()` и `ScrapeResult`
+## Быстрый старт: `client.scrape()` и `ScrapeResult`
 
 Выполняет полный цикл скрапинга в 1 строчку: отправляет HTTP/2 запрос с TLS-спуфингом, автоматически определяет тип гидратации страницы, валидирует данные в Pydantic v2 и возвращает структурированный результат:
 
@@ -85,7 +85,7 @@ asyncio.run(main())
 
 ---
 
-## 🔐 Скрапинг закрытых сайтов с авторизацией (Session Injection)
+## Скрапинг закрытых сайтов с авторизацией (Session Injection)
 
 Для сбора данных на сайтах, где контент скрыт за авторизацией (Threads, Instagram, закрытые каталоги, форумы), используется безопасная инъекция сессии. Это исключает ввод логинов/паролей ботом и предотвращает блокировку аккаунтов антифродом.
 
@@ -122,7 +122,7 @@ async with ScraperClient(config=config) as client:
 
 ---
 
-## 🚀 Пошаговые рецепты
+## Пошаговые рецепты
 
 ### 1. Парсинг Next.js SSR (`__NEXT_DATA__`)
 Мгновенно извлекает состояние гидратации без CSS-селекторов:
@@ -182,7 +182,7 @@ async with ScraperClient() as client:
 
 ---
 
-## 💾 Сохранение данных (Data Persistence 2026)
+## Сохранение данных (Data Persistence 2026)
 
 ### 1. PostgreSQL AsyncSession (UPSERT)
 Атомарное обновление каталогов без дубликатов через `on_conflict_do_update`:
@@ -220,7 +220,7 @@ result.append_ndjson("stream_output.ndjson")
 
 ---
 
-## ⚙️ Ротация прокси и TLS-отпечатков
+## Ротация прокси и TLS-отпечатков
 
 ```python
 from oniscrape import ScraperClient, ScraperConfig, ProxyConfig, RetryConfig
@@ -242,7 +242,7 @@ config = ScraperConfig(
 
 ---
 
-## 🧪 Тестирование
+## Тестирование
 
 ```bash
 uv run --with pytest --with pytest-asyncio pytest -v
@@ -252,6 +252,6 @@ uv run --with pyright --with pytest pyright src tests examples
 
 ---
 
-## 📄 Лицензия
+## Лицензия
 
 MIT License (c) 2026 Oniscrape Authors.
